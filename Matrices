@@ -1,0 +1,335 @@
+package metodo.deber;
+
+import java.util.Scanner;
+
+
+public class MetodoDeber {
+//Declaración de variables    
+public static int n,i,j;
+    
+     public static Scanner dato=new Scanner(System.in);
+    public static void main(String[] args) {
+        
+         //Mensajes en pantalla para el usuario
+        
+        System.out.print("Ingrese el límite: ");
+        n=dato.nextInt();
+        int [][]mat=new int [n][n];
+        System.out.println("Ingrese los datos");
+        llenar (mat);
+        System.out.println("Presentar elementos de la matriz ");
+        presentar (mat);
+        System.out.println("Elementos sobre la matriz principal");
+        sobre_principal(mat);
+        System.out.println("Elementos sobre la matriz principal en arreglo");
+        sobre_principal_arreglo(mat);
+        System.out.println("Elementos debajo la matriz principal");
+        debajo_principal(mat);
+         System.out.println("Elementos debajo la matriz principal en arreglo");
+        debajo_principal_arreglo(mat);
+        System.out.println("Elementos de la diagonal principal");
+        principal(mat);
+        System.out.println("Elementos de la diagonal principal en arreglo");
+        principal_arreglo(mat);
+        System.out.println("Elementos sobre la diagonal secundaria ");
+        sobre_secundaria(mat);
+        System.out.println("Elementos sobre la diagonal secundaria en arreglo ");
+        sobre_secundaria_arreglo(mat);
+        System.out.println("Elementos debajo la diagonal secundaria ");
+        debajo_secundaria(mat);
+        System.out.println("Elementos debajo la diagonal secundaria en arreglo ");
+        debajo_secundaria_arreglo(mat);
+        System.out.println("Elementos de la diagonal secundaria ");
+        secundaria(mat);
+        System.out.println("Elementos de la diagonal secundaria en arreglo ");
+        secundaria_arreglo(mat);
+        }
+        //Datos del arreglo
+     static void llenar (int [][] mat){   
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                System.out.print("["+i+"]["+j+"]: ");
+                mat[i][j]=dato.nextInt();
+            }
+        }
+    }    
+        //Presentar matriz
+        static void presentar (int [][]mat){
+        System.out.println("");
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                System.out.print(mat[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+    }
+        //Presentar números sobre la matriz principal
+        static void sobre_principal(int[][]mat){
+          System.out.println("");
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i<j){
+                    System.out.print(mat[i][j]+" ");
+                    
+                }else{
+                    System.out.print("- ");
+                }
+              }
+              System.out.println();
+          }
+        }
+        //Presentar elementos sobre la diagonal principal en arreglo
+        static void sobre_principal_arreglo(int[][]mat){
+          System.out.println("");
+          int[]array1;
+          int z=0;
+          int aux=0;
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i<j){
+                  z++;      
+                  }
+              }
+          }   
+          array1=new int[z];
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i<j){
+                     array1[aux]=mat[i][j];
+                     aux++;
+                  }
+              }
+          }   
+          
+            for (int k = 0; k < z; k++) {
+                System.out.println(array1[k]);
+                }
+          }
+        
+        //Presentación de los elementos debajo la diagonal principal
+        static void debajo_principal(int[][]mat){
+          System.out.println("");
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i>j){
+                      System.out.print(mat[i][j]+" ");
+                }else{
+                    System.out.print("- ");
+                }
+              }
+              System.out.println();
+          }
+        }
+        
+        //Presentación de los elementos de la diagonal principal en arreglo
+        static void debajo_principal_arreglo(int[][]mat){
+          System.out.println("");
+          int[]array1;
+          int z=0;
+          int aux=0;
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i>j){
+                  z++;      
+                  }
+              }
+          }   
+          array1=new int[z];
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i>j){
+                     array1[aux]=mat[i][j];
+                     aux++;
+                  }
+              }
+          }   
+          
+            for (int k = 0; k < z; k++) {
+                System.out.println(array1[k]);
+                
+            }
+          }
+        
+        //Presentación de los elentos de la diagonal principal
+        static void principal(int[][]mat){
+          System.out.println("");
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i==j){
+                      System.out.print(mat[i][j]+" ");
+                }else{
+                    System.out.print("- ");
+                }
+              }
+              System.out.println();
+          }
+        }
+        
+        //Presentación de los elementos de la diagonal principal en arreglo
+        static void principal_arreglo(int[][]mat){
+          System.out.println("");
+          int[]array1;
+          int z=0;
+          int aux=0;
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i==j){
+                  z++;      
+                  }
+              }
+          }   
+          array1=new int[z];
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i==j){
+                     array1[aux]=mat[i][j];
+                     aux++;
+                  }
+              }
+          }   
+          
+            for (int k = 0; k < z; k++) {
+                System.out.println(array1[k]);
+                
+            }
+          }
+        
+        //Presentación de los elementos sobre la diagonal principal
+         static void sobre_secundaria(int[][]mat){
+             int a=mat[0].length-1;
+          System.out.println("");
+          for(i=0;i<n;i++){ 
+              for(j=0;j<n;j++){
+                  if(i+j<a){
+                      System.out.print(mat[i][j]+" ");
+                }else{
+                    System.out.print("- ");
+                }
+              }
+              System.out.println();
+          }
+        }  
+         
+         //Presentación de los elementos sobre la diagonal principal en arreglo
+         static void sobre_secundaria_arreglo(int[][]mat){
+         int a=mat[0].length-1;
+          System.out.println("");
+          int[]array1;
+          int z=0;
+          int aux=0;
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i+j<a){
+                  z++;      
+                  }
+              }
+          }   
+          array1=new int[z];
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i+j<a){
+                     array1[aux]=mat[i][j];
+                     aux++;
+                  }
+              }
+          }   
+          
+            for (int k = 0; k < z; k++) {
+                System.out.println(array1[k]);
+                
+            }
+          }
+        
+         //Presentación de los elentos que estan debajo la diagonal secundaria
+    static void debajo_secundaria(int[][]mat){
+             int a=mat[0].length-1;
+          System.out.println("");
+          for(i=0;i<n;i++){ 
+              for(j=0;j<n;j++){
+                  if(i+j>a){
+                      System.out.print(mat[i][j]+" ");
+                }else{
+                    System.out.print("- ");
+                }
+              }
+              System.out.println();
+          }
+        } 
+    
+    //Presentación de los elentos que estan debajo la diagonal secundaria en arreglo
+    static void debajo_secundaria_arreglo(int[][]mat){
+         int a=mat[0].length-1;
+          System.out.println("");
+          int[]array1;
+          int z=0;
+          int aux=0;
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i+j>a){
+                  z++;      
+                  }
+              }
+          }   
+          array1=new int[z];
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i+j>a){
+                     array1[aux]=mat[i][j];
+                     aux++;
+                  }
+              }
+          }   
+          
+            for (int k = 0; k < z; k++) {
+                System.out.println(array1[k]);
+                
+            }
+          }
+         //Presentación de los elentos de la diagonal secundaria 
+    static void secundaria(int[][]mat){
+             int a=mat[0].length-1;
+          System.out.println("");
+           for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                if(i+j==n-1){
+                    System.out.print(mat[i][j]+" ");
+                }else{
+                    System.out.print("- ");
+                }
+            }
+            System.out.println();
+        }
+   
+           }       
+    
+    //Presentación de los elentos de la diagonal secundaria en arreglo
+    static void secundaria_arreglo(int[][]mat){
+         int a=mat[0].length-1;
+          System.out.println("");
+          int[]array1;
+          int z=0;
+          int aux=0;
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i+j==n-1){
+                  z++;      
+                  }
+              }
+          }   
+          array1=new int[z];
+          for(i=0;i<n;i++){
+              for(j=0;j<n;j++){
+                  if(i+j==n-1){
+                     array1[aux]=mat[i][j];
+                     aux++;
+                  }
+              }
+          }   
+          
+            for (int k = 0; k < z; k++) {
+                System.out.println(array1[k]);
+                
+            }
+          }
+        }
