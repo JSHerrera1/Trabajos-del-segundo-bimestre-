@@ -1,0 +1,64 @@
+package pkg4operaciones.basicas;
+import java.util.Scanner;
+
+public class Basicas {
+
+    
+    public static void main(String[] args) {
+        Scanner datos = new  Scanner(System.in);
+        int n = 0;
+        int a [] = new int [100]; 
+        int b [] = new int [100]; 
+        double c [] = new double [100]; 
+        int i; 
+              System.out.println("Ingresar el limite: ");
+              n=datos.nextInt();
+        
+        Scanner leer = new Scanner (System.in); 
+        
+        for (i = 0; i <=n; i ++) { 
+            System.out.println ( "Ingrese los valores del arreglo A casilla  " + i); 
+            a [i] = leer.nextInt (); 
+        } 
+        
+        for (i = 0; i <=n; i ++) { 
+            System.out.print ( "Ingrese los valores del arreglo B casilla   " + i  ); 
+            b [i] = leer.nextInt (); 
+        } 
+        
+        System.out.println ( "Elementos de la columna A");
+         for (i = 0; i <=n; i ++) { 
+            System.out.println ( a [i] ); 
+        } 
+         
+         System.out.println ( "Elementos de la columna B");
+        for (i = 0; i <=n; i ++) { 
+            System.out.println (b [i] ); 
+        } 
+        
+        
+        System.out.println ( "El resultado de la resta es:"); 
+        for (i = 0; i <= n; i ++) { 
+            c [i] = a [i] - b [i]; 
+            System.out.println (c [i] + "");            
+        }
+        System.out.println ( "El resultado de la suma es:"); 
+        for (i = 0; i <= n; i ++) { 
+            c [i] = a [i] + b [i]; 
+            System.out.println (c [i] + ""); 
+        }
+        System.out.println ( "El resultado de la multiplicación es de :"); 
+        for (i = 0; i <= n; i ++) { 
+            c [i] = a [i] * b [i]; 
+            System.out.println (c [i] + ""); 
+        }
+        System.out.println ( "El resultado de la división es de :"); 
+        for (i = 0; i <= n; i ++) { 
+            c [i] = a [i] / b [i]; 
+            System.out.println (c [i] + ""); 
+        }
+    } 
+}
+
+
+
